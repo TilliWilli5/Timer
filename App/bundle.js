@@ -54,13 +54,13 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _component_view = __webpack_require__(178);
+
+	var _component_view2 = _interopRequireDefault(_component_view);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(
-	  "div",
-	  null,
-	  "Component"
-	), document.getElementById("container"));
+	_reactDom2.default.render(_react2.default.createElement(_component_view2.default, null), document.getElementById("container"));
 
 /***/ },
 /* 1 */
@@ -21495,6 +21495,36 @@
 
 	module.exports = ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	class TheComponent extends _react2.default.Component {
+	    constructor(pProps) {
+	        super(pProps);
+	    }
+	    render() {
+	        return _react2.default.createElement(
+	            "div",
+	            { "class": "TheComponent" },
+	            "TheComponent"
+	        );
+	    }
+	}
+	exports.default = TheComponent;
 
 /***/ }
 /******/ ]);

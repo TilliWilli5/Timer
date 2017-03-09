@@ -1,4 +1,4 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-ReactDOM.render(<div>Component</div>, document.getElementById("container"));
+import TheComponent from "./Component/component_view.js";
+ReactDOM.render(<TheComponent />, document.getElementById("container"));
