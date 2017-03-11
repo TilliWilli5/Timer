@@ -28,6 +28,7 @@ module.exports = (function(){
             this._elapsed = 0;
             this._idle = 0;
             this.state = "stop";
+            return this;
         }
         /** Start counting */
         Start(){
@@ -43,7 +44,7 @@ module.exports = (function(){
                 case "run":
                     break;
             }
-            
+            return this;
         }
         /** Pause counting */
         Pause(){
@@ -53,6 +54,7 @@ module.exports = (function(){
                 this._elapsed = this.ptime - this.stime - this._idle;
                 this.state = "pause";
             }
+            return this;
         }
         /** Resume counting */
         Resume(){
@@ -61,6 +63,7 @@ module.exports = (function(){
                 this._idle += Date.now() - this.ptime;
                 this.state = "run";
             }
+            return this;
         }
         /** Stop timer - reset all except elapsed and idle time */
         Stop(){
@@ -74,11 +77,13 @@ module.exports = (function(){
                 this.state = "stop";
                 this.Emit("stop");
             }
+            return this;
         }
         /** Reset and start counting again immediately */
         Restart(){
             this.Reset();
             this.state = "run";
+            return this;
         }
         /** Show elapsed time since Start minus idle time */
         get elapsed(){

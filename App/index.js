@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import Timer from "./Component/component_logic.js";
 import AvComponent from "./Component/component_avatar.js";
 let timer = new Timer();
+window.timer = timer;
 console.log(timer);
 //
 //End of your code
