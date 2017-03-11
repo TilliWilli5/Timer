@@ -50,7 +50,7 @@ class TimerDisplayAv extends React.Component
         let msi = new Date(idle).getMilliseconds();
 
         return (
-            <span className="timer-display">{`${mme}:${sse}:${mse} | ${mmi}:${ssi}:${msi}`}</span>
+            <span className="timer-display">{`${mme}:${sse}:${mse.toString()[0]}`}</span>
         );
     }
 }
@@ -60,9 +60,9 @@ class TimerControllPanelAv extends React.Component
     render(){
         return (
             <span className="timer-controll-panel">
-                <TimerButtonAv label={"Start"} action={this.props.actions.Start} />
-                <TimerPauseResumeButtonAv actions={{Pause: this.props.actions.Pause, Resume: this.props.actions.Resume}} />
-                <TimerButtonAv label={"Stop"} action={this.props.actions.Stop} />
+                <TimerButtonAv label={"Start"} action={this.props.actions.Start} icon="glyphicon-play" />
+                <TimerButtonAv label={"Pause"} action={this.props.actions.Pause} icon="glyphicon-pause" />
+                <TimerButtonAv label={"Stop"} action={this.props.actions.Stop} icon="glyphicon-stop" />
             </span>
         );
     }
@@ -70,7 +70,11 @@ class TimerControllPanelAv extends React.Component
 class TimerButtonAv extends React.Component
 {
     render(){
-        return <button onClick={this.props.action}>{this.props.label}</button>
+        return (
+            <button  onClick={this.props.action}>
+                <span className={"glyphicon " + this.props.icon}></span>
+            </button>
+        );
     }
 }
 
